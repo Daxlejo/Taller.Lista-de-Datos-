@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<title>Restaurant Order System</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+font-family: "Segoe UI", Arial;
+background: linear-gradient(135deg,#eef2ff,#f8fafc);
+margin:0;
+padding:40px;
+text-align:center;
+color:#1e293b;
+}
+
+h1{
+margin-bottom:20px;
+font-size:32px;
+}
+
+input{
+padding:10px;
+margin:6px;
+border-radius:8px;
+border:1px solid #cbd5e1;
+outline:none;
+font-size:14px;
+}
+
+input:focus{
+border-color:#6366f1;
+box-shadow:0 0 4px rgba(99,102,241,0.4);
+}
+
+
+button{
+padding:10px 16px;
+border:none;
+border-radius:8px;
+font-weight:600;
+cursor:pointer;
+background:linear-gradient(135deg,#6366f1,#4f46e5);
+color:white;
+transition:all .25s;
+box-shadow:0 3px 6px rgba(0,0,0,0.15);
+}
+
+button:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 12px rgba(0,0,0,0.2);
+background:linear-gradient(135deg,#4f46e5,#4338ca);
+}
+
+button:active{
+transform:scale(0.95);
+}
+
+/* COLUMNAS */
+
+.columns{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.column{
+background:white;
+padding:20px;
+border-radius:14px;
+width:320px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:transform .2s;
+}
+
+.column:hover{
+transform:translateY(-4px);
+}
+
+.column h2{
+margin-top:0;
+border-bottom:2px solid #eef2ff;
+padding-bottom:8px;
+}
+
+
+.card{
+background:#f8fafc;
+border-left:4px solid #6366f1;
+padding:12px;
+margin-top:12px;
+border-radius:10px;
+font-size:14px;
+box-shadow:0 3px 8px rgba(0,0,0,0.05);
+transition:all .2s;
+}
+
+.card:hover{
+transform:scale(1.03);
+}
+
+.history{
+border-left:4px solid #16a34a;
+background:#f0fdf4;
+}
+
+
+#message{
+margin-top:10px;
+font-weight:600;
+color:#16a34a;
+min-height:20px;
+}
+
+
+.ready{
+color:#16a34a;
+font-weight:bold;
+}
+
+.preparing{
+color:#f59e0b;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Restaurante la Tripa Antioqueña</h1>
+
+<div id="message"></div>
+
+<div>
+
+<input id="dish" placeholder="Dish name">
+<input id="price" type="number" placeholder="Price">
+
+<button onclick="createOrder()">Create Order</button>
+
+</div>
+
+<div class="columns">
+
+<div class="column">
+
+<h2>👨‍🍳 Kitchen</h2>
+
+<div id="kitchen"></div>
+
+</div>
+
+<div class="column">
+
+<h2>💰 Cashier</h2>
+
+<div id="cashier"></div>
+
+</div>
+
+<div class="column">
+
+<h2>📜 History</h2>
+
+<div id="history"></div>
+
+</div>
+
+</div>
+
+<script src="arch.js"></script>
+
+</body>
+
+</html>
